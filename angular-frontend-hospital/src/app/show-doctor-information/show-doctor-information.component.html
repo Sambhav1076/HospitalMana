@@ -1,0 +1,9 @@
+<div class="container text-center x">
+    <ul *ngFor="let doctor of doctors">
+
+        <li><button  [routerLink]="['/show-doctor-information', doctor.id]">{{doctor.name}}</button></li>
+    </ul>
+        
+</div>
+    
+<!-- routerLink="findParticularDoctor" -->

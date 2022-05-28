@@ -1,0 +1,26 @@
+<div class="container-fluid text-center">
+  <h2><b>Doctor Detail</b></h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">specialised</th>
+        <th scope="col">Patient Registered</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doctor of myDoc">
+        <td>{{ doctor.name }}</td>
+        <td>{{ doctor.specialised }}</td>
+        <td *ngIf="getCount(doctor.name)">{{ x }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-danger btn-lg" (click)="GoBack()">
+    Back
+  </button>
+</div>
+<!-- <td *ngIf="patientCountMap.get('Dr. Nikita Jain')!=null">{{patientCountMap.get('Dr. Nikita Jain')}}</td> -->
+<!-- <td>{{patientCountMap.get(doctor.name)}}</td> -->
+<!-- <td><button class="btn btn-primary" type="submit" (click)="getCount(doctor.name)">Button</button></td> -->

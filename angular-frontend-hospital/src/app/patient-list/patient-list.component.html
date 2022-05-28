@@ -1,0 +1,39 @@
+
+
+
+<div class="container">
+
+    <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Id </th>
+            <th scope="col">Name</th>
+            <th scope="col">Date Of Visit</th>
+            <th scope="col">Visited Doctor Name</th>
+            
+            
+
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let patient of  patients">
+              <td>{{patient.id}}</td>
+              <td>{{patient.name}}</td>
+              <td>{{patient.dateOfVisit}}</td>
+              <td>{{patient.visitedDoctorName}}</td>
+              
+           
+            
+          </tr>
+        </tbody>
+      </table>
+    
+      <button type="button" class="btn btn-danger btn-lg" (click)="GoBack()">Back To Registration</button>
+
+</div>
+
+<!-- <ul *ngFor="let doctor of doctors">
+    <li>{{doctor.name}} {{ doctor.age}} {{doctor.gender}} {{doctor.id}} </li>
+
+   </ul> -->

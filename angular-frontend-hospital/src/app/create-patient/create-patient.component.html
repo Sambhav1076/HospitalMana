@@ -1,0 +1,97 @@
+<h2 class="mt-3 text-center"><b>Patient Registration</b></h2>
+<div class="col-md-6 offset-md-3">
+  <form (ngSubmit)="onSubmit()" >
+    <div class="mt-3 form-group">
+      <label>Name</label>
+
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        [(ngModel)]="patient.name"
+        name="name" 
+        required
+        placeholder="Enter Your Name" #name="ngModel" autofocus
+      />
+    </div>
+    <div *ngIf="name.errors?.['required']" style="color:red;">
+      <b>Name Field is Required</b>
+    </div>
+         
+          
+
+    <div class="mt-3 form-group">
+      <label>Date Of Visit</label>
+      <input
+        type="date"
+        class="form-control"
+        id="dateOfVisit"
+        [(ngModel)]="patient.dateOfVisit"
+        name="dateOfVisit"
+      />
+    </div>
+
+    <div class="mt-3 form-group">
+      <label for="visitedDoctorName">Doctor</label>
+      <div class="select">
+        <select
+          id="visitedDoctorName"
+          name="visitedDoctorName"
+          class="form-control"
+          [(ngModel)]="patient.visitedDoctorName" #doctorName="ngModel" required
+        >
+          <option *ngFor="let doctor of doctors" [value]="doctor.name">
+            {{ doctor.name }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div *ngIf="doctorName.errors?.['required']" style="color:red;">
+      <b>DoctorName is Required</b>
+    </div>
+    <button class="mt-5 btn btn-success" type="submit" >Register</button>
+   
+ 
+  </form>
+  <!-- routerLink="patientList" -->
+   
+</div>
+
+   
+
+<!-- <h4>Basic mat-select</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Favorite food</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let doctor of doctors" [value]="doctor.name">
+      {{doctor.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field> -->
+
+<!-- <div  *ngFor="let doctor of doctors ">
+
+        <li>{{doctor.name}}</li>
+      </div> -->
+
+<!-- <li *ngFor="let item of doctors; index as i;">
+      <p>{{i}}</p>
+
+      </li> -->
+
+<!-- <div class="mt-3 form-group">
+        <label>Doctor Selection</label>
+        <input type="text" class="form-control" [(ngModel)]="patient.visitedDoctorName">
+<mat-form-field appearance="fill">
+  <mat-label>Doctor</mat-label>
+  
+  
+  <mat-select>
+    <mat-option *ngFor="let doctor of doctors" [value]="doctor.name">
+      {{doctor.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+    </div> -->
